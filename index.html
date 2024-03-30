@@ -1,97 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natig Ibrahimli's CV</title>
-    <style>body{background-color: #f5f5f0;}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natig Ibrahimli - CV</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: 'Fira Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1, h2 {
+        margin: 0;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li::before {
+        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: #007bff; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+    hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+    }
+    .footer {
+        font-size: 10px;
+    }
+</style>
 </head>
-
 <body>
 
-<h1 style="text-align: center;">Natig Ibrahimli</h1>
+<div class="container">
+    <header>
+        <h1>Natig Ibrahimli</h1>
+        <p>Poznań, Wielkopolskie, 61-139</p>
+    </header>
+    
+    <section>
+        <h2>Kontakt:</h2>
+        <ul>
+            <li><i class="fas fa-phone"></i> +48 739 044 362</li>
+            <li><i class="fas fa-envelope"></i> natigibrahimli6@gmail.com</li>
+            <li><i class="fas fa-envelope"></i> natig.ibrahimli@student.put.poznan.pl</li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/natig-ibrahimli-2561712b8/">Natig Ibrahimli</a></li>
+            <li><i class="fab fa-github"></i> <a href="https://github.com/Miedzymorze6">Miedzymorze6</a></li>
+        </ul>
+    </section>
 
-<section>
-    <h2>Professional Summary</h2>
-    <p>Motivated student in the field of Computing and Artificial Intelligence, dedicated to continuous improvement.
-        Actively seeking opportunities to enhance skills and contribute innovative solutions to real-world challenges.
-        Demonstrated ability to collaborate effectively in demanding environments, with a strong aptitude for
-        communication with colleagues and overall contribution to teamwork, as well as hard work. Committed to the
-        absolute and ambitious goal of advancing the capabilities of technology to improve daily life and address common
-        challenges, with a particular focus on evolutionary algorithms.</p>
+    <section>
+        <h2>Podsumowanie</h2>
+        <p>Zmotywowany student sztucznej inteligencji, zaangażowany w ciągłe doskonalenie, aktywnie poszukujący możliwości wprowadzania innowacji i rozwiązań dla rzeczywistych wyzwań. Wykazał się efektywną współpracą i umiejętnościami komunikacyjnymi w wymagających środowiskach, w tym uczestnictwem w kole naukowym "Spektrum". Zaangażowany w rozwój technologii w celu poprawy codziennego życia i sprostania powszechnym wyzwaniom, ze szczególnym uwzględnieniem algorytmów ewolucyjnych.</p>
+    </section>
+
+    <section>
+        <h2>Doświadczenie</h2>
+        <p>Brak doświadczenia zawodowego w obszarze IT.</p>
+    </section>
+
+    <section>
+        <h2>Edukacja</h2>
+        <p>Licencjat, inż. Politechnika Poznańska - Sztuczna inteligencja.</p>
+        <p><em>Obecnie student studiów licencjackich</em></p>
+        <p><em>Rozpoczęty: 1 października 2023</em></p>
+    </section>
+
+    <section>
+        <h2>Umiejętności</h2>
+        <ul>
+            <li>Zaimplementowane osobiste projekty koncentrujące się na algorytmach sortowania i algorytmach ewolucyjnych dla danych przy użyciu Pythona, prezentowane na GitHub.</li>
+            <li>Znajomość języka C do tworzenia aplikacji o małej skali.</li>
+            <li>Doświadczenie w SQL, w szczególności w tworzeniu baz danych i wykonywaniu zapytań wyszukiwania przy użyciu SQLite.</li>
+            <li>Posiada odpowiednią wiedzę w zakresie MS Word, Excel i Access do tworzenia dokumentów, a także zarządzania danymi i bazami danych.</li>
+            <li>Biegła znajomość programów Adobe Lightroom i Adobe Photoshop do edycji zdjęć.</li>
+            <li>Wykazane umiejętności miękkie obejmują chęć doskonalenia się, efektywną pracę zespołową, umiejętność rozwiązywania problemów, jasną komunikację, zdolność do pracy pod presją i kreatywność.</li>
+            <li>Biegła znajomość technicznego i akademickiego języka angielskiego (C1), średniozaawansowana znajomość języka rosyjskiego (B2) oraz podstawowa znajomość języka polskiego (A2) i niemieckiego (A2).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Zainteresowania</h2>
+        <ul>
+            <li>Astronomia obserwacyjna przy użyciu ESASky w połączeniu ze Stellarium i astrobiologią.</li>
+            <li>Projekty związane ze sztuczną inteligencją, zwłaszcza w dziedzinie algorytmów ewolucyjnych.</li>
+            <li>Doskonalenie umiejętności rysowania.</li>
+        </ul>
+    </section>
+
     <hr>
-</section>
 
-<section>
-    <h2>Education</h2>
-    <h3>Poznan University of Technology</h3>
-    <p>Engineering degree in Artificial Intelligence<br>
-        Currently an undergraduate student and member of Scientific Club "Spektrum"<br>
-        Started: October 1, 2023</p>
-    <hr>
-</section>
-
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li><strong>Programming Languages:</strong> Python, C</li>
-        <li><strong>Web Development:</strong> HTML</li>
-        <li><strong>Image Processing:</strong> Adobe Lightroom, Adobe Photoshop</li>
-        <li><strong>Operating Systems:</strong> Win 7/10, Linux(Ubuntu) </li>
-        <li><strong>Languages:</strong> Azerbaijani(Native), Turkish(C2), English(C1), Russian(B1), Polish (A1)</li>
-        <li><strong>Databases:</strong> SQL</li>
-        <li><strong>Microsoft Office:</strong> Word, Excel, Access</li>
-        <li><strong>Soft Skills:</strong> Willingness to Improve, Teamwork, Problem Solving, Communication, Creativity
-        </li>
-    </ul>
-    <hr>
-</section>
-<section>
-    <h2>Achievements & Competitions</h2>
-    <ul>
-        <li>
-            <strong>Participation in International Student Competition “Black Sea Science 2024”</strong><br>
-            Contributed to a written scientific paper titled
-            “An Artificial Intelligence-Based Similarity Framework for Comprehensive Habitability Index Calculation of Exoplanets”
-        </li>
-        <li>
-            <strong>Single author of a scientific paper for "Black Sea Science 2024" competition</strong><br>
-            Focused on calculating a Comprehensive Habitability Index for Exoplanets using predefined methods.<br>
-            See more about standings (Poznan University of Technology):
-            <a href="http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf" target="_blank">Standings</a>
-        </li>
-    </ul>
-    <hr>
-</section>
-
-<section>
-    <h2>Interests & Hobbies</h2>
-    <ul>
-        <li>Observational Astronomy using ESASky combined with Stellarium and Astrobiology</li>
-        <li>Photography</li>
-        <li>AI-related projects, especially in the field of evolutionary algorithms</li>
-        <li>Learning new languages</li>
-        <li>Mastering skills at drawing</li>
-        <li>Interested in playing piano and guitar</li>
-    </ul>
-    <hr>
-</section>
-
-<section>
-    <h2>Contact Information</h2>
-    <p><strong>City:</strong> Poznań (Poznań-Nowe Miasto)<br>
-<strong>Email:</strong> 
-  <a href="mailto:natigibrahimli6@gmail.com">natigibrahimli6@gmail.com</a><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:natigibrahimli@student.put.poznan.pl">natigibrahimli@student.put.poznan.pl</a><br>
-<strong>Phone:</strong> +48 739 044 362<br>
-<strong>LinkedIn:</strong> 
-  <a href="https://linkedin.com/in/natig-ibrahimli-2561712b8/" target="_blank">Natig Ibrahimli</a><br>
-<strong>GitHub:</strong> 
-  <a href="https://github.com/Miedzymorze6" target="_blank">Miedzymorze6</a></p>
-
-</section>
+    <footer class="footer">
+        <p>Wyrażam zgodę na przetwarzanie moich danych osobowych przez (nazwa firmy) w celu przeprowadzenia rekrutacji na stanowisko, na które aplikuję.</p>
+    </footer>
+</div>
 
 </body>
-
 </html>
