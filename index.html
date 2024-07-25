@@ -4,112 +4,546 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Natig Ibrahimli - CV</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
     body {
-        font-family: 'Fira Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #121212;
+        color: #e0e0e0;
+        overflow-x: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.5; /* Adjust opacity to make the content more readable */
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: rgba(31, 31, 31, 0.9);
+        border-bottom: 2px solid #333;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        color: #ffffff;
+    }
+    header p {
+        margin: 5px 0;
+        color: #bbbbbb;
+    }
+    header .contact-info {
+        text-align: center;
+    }
+    /* Link Color Styling */
+    header .contact-info a,
+    .container a {
+        color: #ffffff; /* Base color for links */
+        text-decoration: none;
+    }
+    header .contact-info a:hover,
+    header .contact-info a:visited,
+    header .contact-info a:active,
+    .container a:hover,
+    .container a:visited,
+    .container a:active {
+        color: #ffffff; /* Ensures link color remains the same */
+        text-decoration: underline; /* Optional: add underline on hover */
     }
     .container {
-        max-width: 800px;
-        margin: 0 auto;
+        max-width: 1200px;
+        margin: 20px auto;
         padding: 20px;
-    }
-    h1, h2 {
-        margin: 0;
+        background-color: rgba(31, 31, 31, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 1;
+        flex: 1;
     }
     section {
         margin-bottom: 20px;
+    }
+    h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        color: #ffffff;
+        font-size: 1.8rem;
+    }
+    p {
+        line-height: 1.6;
     }
     ul {
         list-style-type: none;
         padding: 0;
     }
     ul li::before {
-        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-        color: #007bff; /* Change the color */
-        font-weight: bold; /* If you want it to be bold */
-        display: inline-block; /* Needed to add space between the bullet and the text */
-        width: 1em; /* Also needed for space (tweak if needed) */
-        margin-left: -1em; /* Also needed for space (tweak if needed) */
+        content: "\2022";
+        color: #111111;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
     }
     hr {
         border: none;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #333;
         margin: 20px 0;
     }
     .footer {
-        font-size: 10px;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #999;
+    }
+    .bar-container {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        background-color: #333;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    .bar {
+        height: 100%;
+        background-color: #938989;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        transition: width 1s ease-in-out;
+    }
+    .bar span {
+        position: relative;
+        white-space: nowrap;
+        padding: 0 5px;
+    }
+    .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .fade-in.visible {
+        opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        .container {
+            padding: 15px;
+        }
+        .bar-container {
+            height: 25px;
+        }
+        .bar {
+            font-size: 0.7rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+        .container {
+            padding: 10px;
+        }
+        .bar-container {
+            height: 20px;
+        }
+        .bar {
+            font-size: 0.6rem;
+        }
+    }
+
+    .language-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .language-buttons button {
+        background-color: #333;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .language-buttons button:hover {
+        background-color: #555;
     }
 </style>
 </head>
 <body>
 
+<img class="video-background" src="https://i.pinimg.com/originals/98/4c/60/984c608e076bb0914615b5f8362c7408.gif" alt="Background GIF">
+
+<header>
+    <h1>Natig Ibrahimli</h1>
+    <p>Poznań, Wielkopolskie, 61-139</p>
+    <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +48 739 044 362</p>
+        <p><i class="fas fa-phone"></i> +994 55 561 3019</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:natigibrahimli6@gmail.com">natigibrahimli6@gmail.com</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:natig.ibrahimli@student.put.poznan.pl">natig.ibrahimli@student.put.poznan.pl</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/natig-ibrahimli-2561712b8/">linkedin.com/in/natig-ibrahimli-2561712b8/</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/Miedzymorze6">github.com/Miedzymorze6</a></p>
+    </div>
+</header>
+
 <div class="container">
-    <header>
-        <h1>Natig Ibrahimli</h1>
-        <p>Poznań, Wielkopolskie, 61-139</p>
-    </header>
-    
-    <section>
-        <h2>Kontakt:</h2>
-        <ul>
-            <li><i class="fas fa-phone"></i> +48 739 044 362</li>
-            <li><i class="fas fa-envelope"></i> natigibrahimli6@gmail.com</li>
-            <li><i class="fas fa-envelope"></i> natig.ibrahimli@student.put.poznan.pl</li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/natig-ibrahimli-2561712b8/">Natig Ibrahimli</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/Miedzymorze6">Miedzymorze6</a></li>
-        </ul>
-    </section>
+    <div class="language-buttons">
+        <button onclick="showContent('en')">English</button>
+        <button onclick="showContent('ru')">Русский</button>
+        <button onclick="showContent('pl')">Polski</button>
+    </div>
 
-    <section>
-        <h2>Podsumowanie</h2>
-        <p>Zmotywowany student sztucznej inteligencji, zaangażowany w ciągłe doskonalenie, aktywnie poszukujący możliwości wprowadzania innowacji i rozwiązań dla rzeczywistych wyzwań. Wykazał się efektywną współpracą i umiejętnościami komunikacyjnymi w wymagających środowiskach, w tym uczestnictwem w kole naukowym "Spektrum". Zaangażowany w rozwój technologii w celu poprawy codziennego życia i sprostania powszechnym wyzwaniom, ze szczególnym uwzględnieniem algorytmów ewolucyjnych.</p>
-    </section>
+    <!-- English Content -->
+    <div id="content-en">
+        <section class="fade-in">
+            <h2>Professional Summary</h2>
+            <p>Enthusiastic student specializing in Computing and Artificial Intelligence with a strong commitment to continuous improvement. Eager to learn new skills, participate in innovative projects, and tackle real-world challenges. Proven ability to excel in collaborative settings and contribute effectively to team efforts. Driven by a passion for advancing technology to enhance daily life, particularly through the application of evolutionary algorithms.</p>
+        </section>
 
-    <section>
-        <h2>Doświadczenie</h2>
-        <p>Brak doświadczenia zawodowego w obszarze IT.</p>
-    </section>
+        <section class="fade-in">
+            <h2>Education</h2>
+            <p><strong>Engineering Degree in Artificial Intelligence</strong> <span style="float: right;">Started: October 1, 2023</span></p>
+            <p><em>Poznań University of Technology</em></p>
+            <p><em>Currently an undergraduate student</em></p>
+        </section>
 
-    <section>
-        <h2>Edukacja</h2>
-        <p>Politechnika Poznańska - Sztuczna inteligencja.</p>
-        <p><em>Obecnie student studiow inzynierskich</em></p>
-        <p><em>Rozpoczęty: 1 października 2023</em></p>
-    </section>
+        <section class="fade-in">
+            <h2>Skills</h2>
+            <table>
+                <tr>
+                    <td><strong>Programming Languages:</strong></td>
+                    <td>Python, C, Bash</td>
+                </tr>
+                <tr>
+                    <td><strong>Web Development:</strong></td>
+                    <td>HTML, JavaScript, CSS</td>
+                </tr>
+                <tr>
+                    <td><strong>Image Processing:</strong></td>
+                    <td>Adobe Lightroom, Adobe Photoshop</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating Systems:</strong></td>
+                    <td>Windows 7/10, Linux (Ubuntu)</td>
+                </tr>
+                <tr>
+                    <td><strong>Databases:</strong></td>
+                    <td>SQL</td>
+                </tr>
+                <tr>
+                    <td><strong>Microsoft Office:</strong></td>
+                    <td>Word, Excel, Access</td>
+                </tr>
+                <tr>
+                    <td><strong>Document Preparation:</strong></td>
+                    <td>LaTeX</td>
+                </tr>
+                <tr>
+                    <td><strong>Soft Skills:</strong></td>
+                    <td>Communication, Teamwork, Problem-solving, Flexibility, Time Management</td>
+                </tr>
+            </table>
+        </section>
 
-    <section>
-        <h2>Umiejętności</h2>
-        <ul>
-            <li>Zaimplementowane osobiste projekty koncentrujące się na algorytmach sortowania i algorytmach ewolucyjnych dla danych przy użyciu Pythona, prezentowane na GitHub.</li>
-            <li>Znajomość języka C do tworzenia aplikacji o małej skali na Linux i Windows..</li>
-            <li>Doświadczenie w SQL, w szczególności w tworzeniu baz danych i wykonywaniu zapytań wyszukiwania przy użyciu SQLite.</li>
-            <li>Posiada odpowiednią wiedzę w zakresie LaTeX, MS Word, Excel i Access do tworzenia dokumentów, a także zarządzania danymi i bazami danych.</li>
-            <li>Biegła znajomość programów Adobe Lightroom i Adobe Photoshop do edycji zdjęć.</li>
-            <li>Wykazane umiejętności miękkie obejmują chęć doskonalenia się, efektywną pracę zespołową, umiejętność rozwiązywania problemów, jasną komunikację, zdolność do pracy pod presją i kreatywność.</li>
-            <li>Biegła znajomość technicznego i akademickiego języka angielskiego (C1), średniozaawansowana znajomość języka rosyjskiego (B2) oraz podstawowa znajomość języka polskiego (A2) i niemieckiego (A2).</li>
-        </ul>
-    </section>
+        <section class="fade-in">
+            <h2>Certificates</h2>
+            <p><strong>Participation in the International Student Contest "Black Sea Science 2024"</strong></p>
+            <p><em>Contributed to the writing of the scientific paper titled "AI-based Similarity Framework for Comprehensive Habitability Index Calculation of Exoplanets"</em></p>
+            <ul>
+                <li>Only author of the scientific paper submitted for the "Black Sea Science 2024" contest.</li>
+                <li>More information: <a href="http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf">http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf</a></li>
+            </ul>
+            <p><strong>IELTS Certificate</strong></p>
+            <ul>
+                <li><strong>Listening:</strong> 7.0 <strong>Reading:</strong> 7.5 <strong>Writing:</strong> 6.5 <strong>Speaking:</strong> 7.0 <strong>Overall Band Score:</strong> 7.0 <strong>CEFR Level:</strong> C1</li>
+                <li><strong>Reference:</strong> "Test Report Form" will be provided upon request.</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Zainteresowania</h2>
-        <ul>
-            <li>Astronomia obserwacyjna przy użyciu ESASky w połączeniu ze Stellarium i astrobiologią.</li>
-            <li>Projekty związane ze sztuczną inteligencją, zwłaszcza w dziedzinie algorytmów ewolucyjnych.</li>
-            <li>Doskonalenie umiejętności rysowania.</li>
-            <li>Interesuje sie cyberbezpieczenstwem, analiza danych i stosowanymi projektami uczenia maszynowego, chetnie inwestuje cały czas z pasja w te dziedziny.</li>
-            <li>Głeboka pasja do angazowania sie w duze projekty w firmach</li>
-        </ul>
-    </section>
+        <section class="fade-in">
+            <h2>Interests and Hobbies</h2>
+            <ul>
+                <li>Observational astronomy using ESASky combined with Stellarium and astrobiology</li>
+                <li>AI projects, particularly in the field of evolutionary algorithms</li>
+                <li>Learning new languages</li>
+            </ul>
+        </section>
 
-    <hr>
+        <section class="fade-in">
+            <h2>Languages</h2>
+            <div class="bar-container">
+                <div class="bar" style="width: 80%;"><span>English (C1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 60%;"><span>Russian (B1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 40%;"><span>Polish (A2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 90%;"><span>Turkish (C2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 100%;"><span>Azerbaijani (Native)</span></div>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <p>Wyrazam zgode na przetwarzanie moich danych osobowych w celu rekrutacji na stanowisko, na ktore aplikuje oraz inne stanowiska w firmie.</p>
-    </footer>
+        <hr>
+
+        <footer class="footer">
+            <p>I consent to the processing of my personal data by <strong>"COMPANY NAME"</strong> for the purposes of recruitment for the position I am applying for, for future recruitments, as well as for other positions deemed suitable within the company.</p>
+        </footer>
+    </div>
+
+    <!-- Russian Content -->
+    <div id="content-ru" style="display:none;">
+        <section class="fade-in">
+            <h2>Профессиональное резюме</h2>
+            <p>Целеустремленный студент, специализирующийся на вычислениях и искусственном интеллекте, с сильной приверженностью к постоянному совершенствованию. Стремится изучать новые навыки, участвовать в инновационных проектах и решать реальные задачи. Доказанная способность к отличной работе в команде и эффективному внесению вклада в командные усилия. Движимый страстью к развитию технологий для улучшения повседневной жизни, особенно через применение эволюционных алгоритмов.</p>
+        </section>
+
+        <section class="fade-in">
+            <h2>Образование</h2>
+            <p><strong>Степень инженера в области искусственного интеллекта</strong> <span style="float: right;">Начало: 1 октября 2023</span></p>
+            <p><em>Познаньский технологический университет</em></p>
+            <p><em>В настоящее время студент бакалавриата</em></p>
+        </section>
+
+        <section class="fade-in">
+            <h2>Навыки</h2>
+            <table>
+                <tr>
+                    <td><strong>Языки программирования:</strong></td>
+                    <td>Python, C, Bash</td>
+                </tr>
+                <tr>
+                    <td><strong>Веб-разработка:</strong></td>
+                    <td>HTML, JavaScript, CSS</td>
+                </tr>
+                <tr>
+                    <td><strong>Обработка изображений:</strong></td>
+                    <td>Adobe Lightroom, Adobe Photoshop</td>
+                </tr>
+                <tr>
+                    <td><strong>Операционные системы:</strong></td>
+                    <td>Windows 7/10, Linux (Ubuntu)</td>
+                </tr>
+                <tr>
+                    <td><strong>Базы данных:</strong></td>
+                    <td>SQL</td>
+                </tr>
+                <tr>
+                    <td><strong>Microsoft Office:</strong></td>
+                    <td>Word, Excel, Access</td>
+                </tr>
+                <tr>
+                    <td><strong>Подготовка документов:</strong></td>
+                    <td>LaTeX</td>
+                </tr>
+                <tr>
+                    <td><strong>Мягкие навыки:</strong></td>
+                    <td>Коммуникация, Командная работа, Решение проблем, Гибкость, Тайм-менеджмент</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="fade-in">
+            <h2>Сертификаты</h2>
+            <p><strong>Участие в Международном конкурсе студентов "Черноморская наука 2024"</strong></p>
+            <p><em>Внесение вклада в написание научной работы под названием "Искусственный интеллект на основе рамки схожести для комплексного расчета индекса обитаемости экзопланет"</em></p>
+            <ul>
+                <li>Единственный автор научной работы, поданной на конкурс "Черноморская наука 2024".</li>
+                <li>Подробнее: <a href="http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf">http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf</a></li>
+            </ul>
+            <p><strong>Сертификат IELTS</strong></p>
+            <ul>
+                <li><strong>Слушание:</strong> 7.0 <strong>Чтение:</strong> 7.5 <strong>Письмо:</strong> 6.5 <strong>Разговор:</strong> 7.0 <strong>Общий балл:</strong> 7.0 <strong>Уровень CEFR:</strong> C1</li>
+                <li><strong>Ссылка:</strong> "Отчет о тестировании" будет предоставлен по запросу.</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Интересы и хобби</h2>
+            <ul>
+                <li>Наблюдательная астрономия с использованием ESASky в сочетании со Stellarium и астrobiология</li>
+                <li>Проекты в области ИИ, особенно в области эволюционных алгоритмов</li>
+                <li>Изучение новых языков</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Языки</h2>
+            <div class="bar-container">
+                <div class="bar" style="width: 80%;"><span>Английский (C1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 60%;"><span>Русский (B1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 40%;"><span>Польский (A2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 90%;"><span>Турецкий (C2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 100%;"><span>Азербайджанский (Родной)</span></div>
+            </div>
+        </section>
+
+        <hr>
+
+        <footer class="footer">
+            <p>Я даю согласие на обработку моих персональных данных компанией <strong>"COMPANY NAME"</strong> для целей набора на позицию, на которую я подаю заявку, для будущих наборов, а также для других позиций, которые считаются подходящими в компании.</p>
+        </footer>
+    </div>
+
+    <!-- Polish Content -->
+    <div id="content-pl" style="display:none;">
+        <section class="fade-in">
+            <h2>Podsumowanie zawodowe</h2>
+            <p>Entuzjastyczny student specjalizujący się w obliczeniach i sztucznej inteligencji z silnym zobowiązaniem do ciągłego doskonalenia. Chętny do nauki nowych umiejętności, udziału w innowacyjnych projektach i rozwiązywania rzeczywistych problemów. Udowodniona zdolność do doskonałej pracy w zespołach i efektywnego wkładu w działania zespołowe. Motywowany pasją do rozwijania technologii w celu poprawy codziennego życia, szczególnie poprzez zastosowanie algorytmów ewolucyjnych.</p>
+        </section>
+
+        <section class="fade-in">
+            <h2>Wykształcenie</h2>
+            <p><strong>Dyplom inżyniera w dziedzinie sztucznej inteligencji</strong> <span style="float: right;">Rozpoczęcie: 1 października 2023</span></p>
+            <p><em>Politechnika Poznańska</em></p>
+            <p><em>Obecnie student studiów licencjackich</em></p>
+        </section>
+
+        <section class="fade-in">
+            <h2>Umiejętności</h2>
+            <table>
+                <tr>
+                    <td><strong>Języki programowania:</strong></td>
+                    <td>Python, C, Bash</td>
+                </tr>
+                <tr>
+                    <td><strong>Tworzenie stron internetowych:</strong></td>
+                    <td>HTML, JavaScript, CSS</td>
+                </tr>
+                <tr>
+                    <td><strong>Obróbka zdjęć:</strong></td>
+                    <td>Adobe Lightroom, Adobe Photoshop</td>
+                </tr>
+                <tr>
+                    <td><strong>Systemy operacyjne:</strong></td>
+                    <td>Windows 7/10, Linux (Ubuntu)</td>
+                </tr>
+                <tr>
+                    <td><strong>Bazy danych:</strong></td>
+                    <td>SQL</td>
+                </tr>
+                <tr>
+                    <td><strong>Microsoft Office:</strong></td>
+                    <td>Word, Excel, Access</td>
+                </tr>
+                <tr>
+                    <td><strong>Przygotowanie dokumentów:</strong></td>
+                    <td>LaTeX</td>
+                </tr>
+                <tr>
+                    <td><strong>Umiejętności miękkie:</strong></td>
+                    <td>Komunikacja, Praca zespołowa, Rozwiązywanie problemów, Elastyczność, Zarządzanie czasem</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="fade-in">
+            <h2>Certyfikaty</h2>
+            <p><strong>Udział w Międzynarodowym Konkursie Studentów "Czarnomorska Nauka 2024"</strong></p>
+            <p><em>Wkład w napisanie pracy naukowej pt. "Oparty na sztucznej inteligencji system podobieństwa do kompleksowego obliczenia wskaźnika zamieszkiwalności egzoplanet"</em></p>
+            <ul>
+                <li>Jedyny autor pracy naukowej zgłoszonej na konkurs "Czarnomorska Nauka 2024".</li>
+                <li>Więcej informacji: <a href="http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf">http://isc.ontu.edu.ua/wp-content/uploads/sites/50/2024/03/2024-1-IT.pdf</a></li>
+            </ul>
+            <p><strong>Certyfikat IELTS</strong></p>
+            <ul>
+                <li><strong>Słuchanie:</strong> 7.0 <strong>Czytanie:</strong> 7.5 <strong>Pisanie:</strong> 6.5 <strong>Rozmowa:</strong> 7.0 <strong>Ogólny wynik:</strong> 7.0 <strong>Poziom CEFR:</strong> C1</li>
+                <li><strong>Referencje:</strong> "Raport z testu" będzie dostarczony na życzenie.</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Zainteresowania i hobby</h2>
+            <ul>
+                <li>Obserwacja astronomii z użyciem ESASky w połączeniu ze Stellarium i astrobiologia</li>
+                <li>Projekty związane z AI, szczególnie w dziedzinie algorytmów ewolucyjnych</li>
+                <li>Nauka nowych języków</li>
+            </ul>
+        </section>
+
+        <section class="fade-in">
+            <h2>Języki</h2>
+            <div class="bar-container">
+                <div class="bar" style="width: 80%;"><span>Angielski (C1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 60%;"><span>Rosyjski (B1)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 40%;"><span>Polski (A2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 90%;"><span>Turecki (C2)</span></div>
+            </div>
+            <div class="bar-container">
+                <div class="bar" style="width: 100%;"><span>Azerbejdżański (Rodzimy)</span></div>
+            </div>
+        </section>
+
+        <hr>
+
+        <footer class="footer">
+            <p>Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę <strong>"NAZWA FIRMY"</strong> w celu rekrutacji na stanowisko, o które się ubiegam, na potrzeby przyszłych rekrutacji oraz innych stanowisk, które uzna się za odpowiednie w firmie.</p>
+        </footer>
+    </div>
 </div>
+
+<script>
+    function showContent(language) {
+        document.getElementById('content-en').style.display = 'none';
+        document.getElementById('content-ru').style.display = 'none';
+        document.getElementById('content-pl').style.display = 'none';
+
+        document.getElementById('content-' + language).style.display = 'block';
+
+        // Add fade-in effect
+        var sections = document.querySelectorAll('#content-' + language + ' .fade-in');
+        sections.forEach(function(section) {
+            section.classList.add('visible');
+        });
+    }
+
+    // Show English content by default
+    showContent('en');
+</script>
 
 </body>
 </html>
